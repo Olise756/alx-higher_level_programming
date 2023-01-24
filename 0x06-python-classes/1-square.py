@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Defines a square """
 
 class Square:
@@ -11,4 +10,5 @@ class Square:
         Args: size - represnets the size of the square defined
 
         """
+
         self.__size = size
