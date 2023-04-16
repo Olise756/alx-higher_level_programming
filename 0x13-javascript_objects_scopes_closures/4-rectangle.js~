@@ -1,0 +1,13 @@
+#!/usr/bin/node
+
+let Rectangle = require('./4-rectangle');
+
+module.exports = class Square extends Rectangle {
+  constructor (sqr) {
+    super(sqr, sqr);
+  }
+
+  double () {
+    super.double();
+  }
+};
