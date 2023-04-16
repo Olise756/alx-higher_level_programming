@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-This script lists all State objects
+This script displays every State objects
 from the database `hbtn_0e_6_usa`.
 """
 
@@ -10,6 +11,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
+
     """
     Access to the database and get the states
     from the database.
@@ -22,5 +24,5 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for instance in session.query(State).order_by(State.id):
-        print('{0}: {1}'.format(instance.id, instance.name))
+    for x in session.query(State).order_by(State.id):
+        print('{0}: {1}'.format(x.id, x.name))
