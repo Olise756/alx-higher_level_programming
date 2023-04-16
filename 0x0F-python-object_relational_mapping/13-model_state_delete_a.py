@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-This script deletes all State objects
-with a name containing the letter `a`
+This script deletes all objects with a name containing the letter `a`
 from the database `hbtn_0e_6_usa`.
 """
 
@@ -15,15 +14,15 @@ if __name__ == "__main__":
     Deletes State objects on the database.
     """
 
-    db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+    db_url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         argv[1], argv[2], argv[3])
-    engine = create_engine(db_uri)
-    Session = sessionmaker(bind=engine)
+    eng = create_engine(db_url)
+    Session = sessionmaker(bind=eng)
 
     session = Session()
 
-    for instance in session.query(State).filter(State.name.contains('a')):
-        session.delete(instance)
+    for instances in session.query(State).filter(State.name.contains('a')):
+        session.delete(instances)
 
     session.commit()
     session.close()
