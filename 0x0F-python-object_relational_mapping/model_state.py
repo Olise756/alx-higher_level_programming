@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-This script defines a State class and
+This script is set to defines a State class and
 a Base class to work with MySQLAlchemy ORM.
 """
 
@@ -11,6 +12,7 @@ Base = declarative_base()
 
 
 class State(Base):
+    
     """State class
 
     Attributes:

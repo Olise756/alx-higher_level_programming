@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-This script adds the State object
+This script appends the State object
 `Louisiana` to the database `hbtn_0e_6_usa`.
 """
 
@@ -10,6 +11,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
+
     """
     Access to the database and get a state
     from the database.
@@ -17,13 +19,13 @@ if __name__ == "__main__":
 
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         argv[1], argv[2], argv[3])
-    engine = create_engine(db_uri)
-    Session = sessionmaker(bind=engine)
+    eng = create_engine(db_uri)
+    Session = sessionmaker(bind=eng)
 
     session = Session()
 
-    lou_state = State(name='Louisiana')
-    session.add(lou_state)
+    Name = State(name='Louisiana')
+    session.add(Name)
     session.commit()
-    print('{0}'.format(lou_state.id))
+    print('{0}'.format(Name.id))
     session.close()
