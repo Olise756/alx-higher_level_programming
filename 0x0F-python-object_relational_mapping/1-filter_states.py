@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+"""
+This script displays all states with
+a `name` starting with the letter `N`
+from the database `hbtn_0e_0_usa`.
+"""
+
 import MySQLdb
 from sys import argv
 
